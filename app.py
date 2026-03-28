@@ -9,6 +9,7 @@ load_dotenv()
 # ===================== 【只需要改这里】 =====================
 ZAI_API_KEY = os.getenv("ANTHROPIC_API_KEY", "566deedb4e5f416a9b9b4a943c6145e2.LlT9DuYr53VhSAUr")
 ZAI_BASE_URL = "https://api.z.ai/api/anthropic"
+ZAI_MODEL = os.environ.get("ANTHROPIC_MODEL", "glm-4.7")
 # ===========================================================
 
 # 页面配置
