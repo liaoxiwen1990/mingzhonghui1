@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ===================== 【只需要改这里】 =====================
-ZAI_API_KEY = os.getenv("ANTHROPIC_API_KEY", "your_api_key_here")
-ZAI_BASE_URL = "https://api.z.ai/api/paas/v4/chat/completions"
+ZAI_API_KEY = os.getenv("ANTHROPIC_API_KEY", "566deedb4e5f416a9b9b4a943c6145e2.LlT9DuYr53VhSAUr")
+ZAI_BASE_URL = "https://api.z.ai/api/anthropic"
 # ===========================================================
 
 # 页面配置
