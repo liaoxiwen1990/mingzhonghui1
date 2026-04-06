@@ -7,10 +7,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ==================== 配置 ====================
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "566deedb4e5f416a9b9b4a943c6145e2.LlT9DuYr53VhSAUr")
+# 1. 从Streamlit Secrets / 环境变量读取，删除硬编码默认值
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY") or st.secrets.get("ANTHROPIC_API_KEY")
 ANTHROPIC_BASE_URL = os.environ.get("ANTHROPIC_BASE_URL", "https://api.z.ai/api/anthropic")
 ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "glm-4.7")
-
+# 2. 增加密钥校验（推荐，避免运行时报错）
+if not ANTHROPIC_API_KEY:
+    st.error("❌ 未找到ANTHROPIC_API_KEY，请在Streamlit Secrets或本地环境变量中配置！")
+    st.stop()
 # 页面配置
 st.set_page_config(
     page_title="English Tutor",
